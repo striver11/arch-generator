@@ -1,0 +1,79 @@
+{
+  "name": "code-tutor",
+  "displayName": "Code Tutor",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.93.0"
+  },
+  "categories": [
+    "AI",
+    "Chat"
+  ],
+  "activationEvents": [
+    "onCommand:extension.generateArchitecture",
+    "onCommand:extension.generateSequenceDiagram",
+    "onCommand:extension.generateClassDiagram"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.generateArchitecture",
+        "title": "Generate Architecture Diagram"
+      },
+      {
+        "command": "extension.generateSequenceDiagram",
+        "title": "Generate Sequence Diagram"
+      },
+      {
+        "command": "extension.generateClassDiagram",
+        "title": "Generate Class Diagram"
+      }
+    ],
+    "chatParticipants": [
+      {
+        "id": "architecture-generator",
+        "fullName": "Architecture Generator",
+        "name": "arch-generator",
+        "description": "what should i generate?",
+        "isSticky": true,
+        "commands": [
+          {
+            "name": "architecture",
+            "description": "Provide any extra information you want to generate."
+          },
+          {
+            "name": "sequence diagram",
+            "description": "Provide any extra information you want to generate."
+          },
+          {
+            "name": "class diagram",
+            "description": "Provide any extra information you want to generate."
+          }
+        ]
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.13.0",
+    "@stylistic/eslint-plugin": "^2.9.0",
+    "@types/mocha": "^10.0.3",
+    "@types/node": "18.x",
+    "@types/vscode": "^1.94.0",
+    "@vscode/test-electron": "^2.3.6",
+    "eslint": "^9.13.0",
+    "glob": "^10.3.10",
+    "mocha": "^10.2.0",
+    "typescript": "^5.8.2",
+    "typescript-eslint": "^8.26.0"
+  }
+}
