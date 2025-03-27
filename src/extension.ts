@@ -8,7 +8,7 @@ const EXERCISES_PROMPT3 = 'You are a helpful architecture generator based on the
 
 export function activate(context: vscode.ExtensionContext) {
 
-    
+
     // define a chat handler
     const handler: vscode.ChatRequestHandler = async (request: vscode.ChatRequest, context: vscode.ChatContext, stream: vscode.ChatResponseStream, token: vscode.CancellationToken) => {
 
@@ -75,15 +75,15 @@ export function activate(context: vscode.ExtensionContext) {
     context.subscriptions.push(
         vscode.commands.registerCommand('extension.generateArchitecture', () => {
             vscode.window.showInformationMessage('Generating architecture diagram...');
-            // Add your logic to generate the architecture diagram here
+            
         }),
         vscode.commands.registerCommand('extension.generateSequenceDiagram', () => {
             vscode.window.showInformationMessage('Generating sequence diagram...');
-            // Add your logic to generate the sequence diagram here
+           
         }),
         vscode.commands.registerCommand('extension.generateClassDiagram', () => {
             vscode.window.showInformationMessage('Generating class diagram...');
-            // Add your logic to generate the class diagram here
+           
         })
     );
 }
